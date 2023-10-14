@@ -1,0 +1,186 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    /* border: 1px solid black; */
+}
+@font-face {
+    font-family: virgil;
+    src: url("https://db.onlinewebfonts.com/t/cc6ba99a1d8620c4bfc84d252404e42a.eot");
+    src: url("https://db.onlinewebfonts.com/t/cc6ba99a1d8620c4bfc84d252404e42a.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/cc6ba99a1d8620c4bfc84d252404e42a.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/cc6ba99a1d8620c4bfc84d252404e42a.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/cc6ba99a1d8620c4bfc84d252404e42a.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/cc6ba99a1d8620c4bfc84d252404e42a.svg#Virgil 3 YOFF")format("svg");
+}
+nav{
+    padding: 20px;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+nav > i{
+   padding: 15px;
+   border-radius: 10px;
+   background-color: white;
+   font-size: 14px;
+   opacity: 0.7;
+}
+#lab-container
+{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+#lab-container > i{
+    padding: 15px;
+    border-radius: 10px;
+    background-color: white;
+    font-size: 14px;
+    opacity: 0.7;
+}
+#Library
+{
+    padding: 10px;
+    border:1px solid #c5c5c5;
+    border-radius: 10px;
+}
+/* ----------hero-body--------- */
+
+#hero-container
+{
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#hero-body
+{
+    width: 400px;
+    height: 350px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+#logo-heading
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#logo-heading > h1{
+    font-size: 35px;
+    color: #190064;
+    font-family: virgil;
+   
+}
+#text{
+   margin: 20px 0px;
+   padding: 10px;
+    font-size:18px;
+    font-weight: 500;
+    font-family: virgil;
+    text-align: center;
+    color: #b9b9b9;
+}
+.Excalidraw-info
+{
+   width: 70%;
+  color: #c5c5c5;
+   padding: 10px;
+   font-family: "Virgil 3 YOFF";
+   border-radius: 5px;
+   margin-top: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+.Excalidraw-info > i
+{
+  height: 20px;
+   padding: 5px;
+    font-size: 12px;
+}
+.bg-hover:hover{
+    color: black;
+    background-color:#f4f4f4;
+   
+}
+#bottom-container
+{
+    height: 10vh;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.bottom-right
+{
+   position: relative;
+   display: flex;
+   align-items: center;
+   gap: 15px;
+}
+.bottom-right > div{
+   
+    padding: 10px 12px;
+    border:1px solid #c5c5c5;
+    border-radius: 10px;
+    font-size: 14px;
+}
+.bottom-right > div > i{
+    padding: 3px;
+    height: 14px;
+    font-size: 8px;
+    border: 1px solid  black;
+    border-radius: 50%;
+  
+}
+.bottom-right >i
+{
+font-size: 20px;
+color: blueviolet;
+opacity: 0.8;
+
+}
+.bottom-left
+{
+    height:35px;
+    border: 1px solid #c5c5c5;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+.bottom-left > span
+{
+    padding: 15px;
+    border: 1px solid #c5c5c5;
+}
+
+#shortcuts-arrow
+{
+
+    color: #c5c5c5;
+    font-family: virgil;
+    position: absolute;
+    bottom: 120px;
+    right:100px;
+   
+}
+#arrow-1
+{
+    padding: 20px 0px;
+    font-size: 40px;
+    color: #c5c5c5;
+    align-self: end;
+    position: absolute;
+    bottom: 60px;
+    right: 50px;
+}
