@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excalidraw</title>
+    <link rel="stylesheet" href="pencil.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="Assets/logo.jpg" type="image/x-icon">
+    <link href="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div id="root">
+        <div id="top-icons">
+            <button class='bx bx-menu'></button>
+            <div id="mid-icons">
+                    <button class='bx bxs-lock-alt'></button>
+                    <div class="vertical-line"></div>
+                    <button class='bx bxs-hand' ></button>
+                    <button class='bx bx-pointer'></button>
+                    <button class='bx bx-square'></button>
+                    <button class="fa-solid fa-diamond"></button>
+                    <button class='bx bx-circle'></button>
+                    <button class='bx bx-right-arrow-alt'></button>
+                    <button class='bx bx-plus' ></button>
+                    <button class='bx bx-minus'></button>
+                    <button class='bx bx-pencil active' id="pen"></button>
+                    <button class="fa-solid fa-a"></button>
+                    <button class='bx bx-image'></button>
+                    <button class='bx bx-eraser' ></button>
+                    <div class="vertical-line"></div>
+                    <button class='bx bx-category' ></button>
+            </div>
+            <div id="lab-container">
+                    <button class='bx bx-user'></button>
+                    <div id="Library">
+                        <button class='bx bx-book-open'></button>
+                        <span>Library</span>
+                    </div>
+            </div>
+        </div>
+        <canvas id="canvas"></canvas>
+        <div id="bottom">
+            <div>
+                <button class='bx bx-undo' style="margin-right: 10px;"></button>
+                <button class='bx bx-redo'></button>
+            </div>
+        </div>
+    </div>
+    <script src="pencil.js"></script>
+</body>
+</html>

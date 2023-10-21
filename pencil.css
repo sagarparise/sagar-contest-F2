@@ -1,0 +1,121 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    /* border: 1px solid black; */
+}
+body
+{
+    overflow: hidden;
+}
+#root
+{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+   
+}
+#top-icons{
+    width: 100vw;
+    padding-inline: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    top: 15px;
+}
+#top-icons>button
+{
+    padding: 8px;
+    font-size: 20px;
+    background-color: #ececf4;
+    border-radius: 5px;
+    border: none;
+    
+}
+#mid-icons
+{
+    padding: 10px 20px;
+    background-color: white;
+    border: 1px solid #c5c5c5;
+    border-radius: 7px;
+    box-shadow: 0px 5px 15px 5px #efefefff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+#mid-icons>button
+{
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 19px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+#mid-icons>button:hover
+{
+    font-size: 13px;
+    background-color:#c5c5c5;
+    color: black;
+}
+.active{
+    background-color: #c5c5c5 !important;
+}
+.vertical-line
+{
+    height: 25px;
+    border-left: 2px solid #c5c5c5;
+}
+#lab-container
+{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+#lab-container > button{
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    background-color:blueviolet;
+    border: none;
+    font-size: 14px;
+    opacity: 0.7;
+}
+#Library
+{
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: #ececf4;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+#Library > button
+{
+    padding: 5px;
+    font-size: 15px;
+    background-color: transparent;
+    border: none;
+}
+#canvas
+{
+    background-color: white;
+    cursor: crosshair;
+}
+#bottom
+{
+    padding: 10px 20px;
+    background-color: #ececf4;
+    border-radius: 5px;
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+}
+#bottom div > button
+{
+    font-size: 20px;
+    border: none;
+
+}
