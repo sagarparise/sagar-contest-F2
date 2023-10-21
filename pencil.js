@@ -39,6 +39,7 @@ let isPencilActive = false ;
 
 function onPencilClick() {
    let penAct= pencil.classList.toggle("active");
+//    console.log(penAct);
     isPencilActive = penAct;
 
     if(isPencilActive) {
