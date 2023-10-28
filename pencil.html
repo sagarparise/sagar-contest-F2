@@ -7,29 +7,28 @@
     <link rel="stylesheet" href="pencil.css">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="Assets/logo.jpg" type="image/x-icon">
-    <link href="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <div id="root">
         <div id="top-icons">
-            <button class='bx bx-menu'></button>
+            <button class='bx bx-menu'"></button>
             <div id="mid-icons">
                     <button class='bx bxs-lock-alt'></button>
                     <div class="vertical-line"></div>
-                    <button class='bx bxs-hand' ></button>
-                    <button class='bx bx-pointer'></button>
-                    <button class='bx bx-square'></button>
-                    <button class="fa-solid fa-diamond"></button>
-                    <button class='bx bx-circle'></button>
-                    <button class='bx bx-right-arrow-alt'></button>
-                    <button class='bx bx-plus' ></button>
-                    <button class='bx bx-minus'></button>
-                    <button class='bx bx-pencil' id="pen"></button>
-                    <button class="fa-solid fa-a"></button>
-                    <button class='bx bx-image'></button>
-                    <button class='bx bx-eraser' ></button>
+                    <button class='bx bxs-hand btn' ></button>
+                    <button class='bx bx-pointer btn'></button>
+                    <button class='bx bx-square btn' id="rectangle" onclick=onActionClick(this)></button>
+                    <button class="fa-solid fa-diamond btn" id="rhombus" onclick=onActionClick(this)></button>
+                    <button class='bx bx-circle btn' id="circle" onclick=onActionClick(this)></button>
+                    <button class='bx bx-right-arrow-alt btn'></button>
+                    <button class='bx bx-plus btn' ></button>
+                    <button class='bx bx-minus btn'></button>
+                    <button class='bx bx-pencil btn' id="pen" onclick=onActionClick(this)></button>
+                    <button class="fa-solid fa-a btn"></button>
+                    <button class='bx bx-image btn'></button>
+                    <button class='bx bx-eraser btn' id="eraser" onclick="onActionClick(this)"></button>
                     <div class="vertical-line"></div>
                     <button class='bx bx-category' ></button>
             </div>
@@ -49,6 +48,23 @@
             </div>
         </div>
     </div>
+    
+    <div class="color-menu hide">
+
+        <label for="strokeStyle">Stroke Color</label> 
+      <div>
+        <input type="color" value="#1e1e1e" name="strokeStyle" id="strokeStyle" oninput="onInput(this)" >
+        <input type="color" value="#e03131" name="strokeStyle" id="strokeStyle" oninput="onInput(this)">
+        <input type="color" value="#2f9e44" name="strokeStyle" id="strokeStyle" oninput="onInput(this)">
+        <input type="color" value="#1971c2" name="strokeStyle" id="strokeStyle" oninput="onInput(this)"> 
+        <input type="color" value="#f08c00" name="strokeStyle" id="strokeStyle" oninput="onInput(this)"> 
+      </div>
+      <label for="strokewidth">Stroke Width</label>
+      <input type="range" min="3" max="50" name="strokewidth" id="strokewidth" oninput="onInput(this)">
+      
+    </div>
     <script src="pencil.js"></script>
+    <!-- <script src="state.js"></script> -->
+    <script src="drawing.js"></script>
 </body>
 </html>

@@ -19,25 +19,26 @@ body{
     overflow: hidden;
 }
 
-nav{
-    width: 100%;
-    padding: 20px;
-    position: fixed;
-    top: 0px;
+#top-icons{
+    width: 100vw;
+    padding-inline: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-   
-
+    gap: 10px;
+    position: absolute;
+    top: 15px;
 }
-nav > i{
-   padding: 15px;
-   border-radius: 10px;
-   background-color: white;
-   font-size: 14px;
-   opacity: 0.7;
+#top-icons>button
+{
+    padding: 8px;
+    font-size: 20px;
+    background-color: #ececf4;
+    border-radius: 5px;
+    border: none;
+    
 }
-.mid-nav
+#mid-icons
 {
     padding: 10px 20px;
     background-color: white;
@@ -46,49 +47,60 @@ nav > i{
     box-shadow: 0px 5px 15px 5px #efefefff;
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
 }
-.mid-nav > i{
+#mid-icons>a>button
+{
     padding: 5px;
     border-radius: 5px;
-    font-size: 17px;
+    font-size: 19px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+#mid-icons>a>button:hover
+{
+    font-size: 13px;
+    background-color:#c5c5c5;
+    color: black;
 }
 .vertical-line
 {
     height: 25px;
     border-left: 2px solid #c5c5c5;
 }
-.mid-nav > i:hover
-{
-    font-size: 13px;
-    background-color:#c5c5c5;
-    color: black;
-}
-.mid-nav > img:hover{
-    padding: 2px;
-    border: 1px solid #c5c5c5;
-    border-radius: 5px;
-    background-color:#c5c5c5;
-}
 #lab-container
 {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
 }
-#lab-container > i{
-    padding: 15px;
+#lab-container > button{
+    padding: 10px;
     border-radius: 10px;
-    background-color: white;
+    color: white;
+    background-color:blueviolet;
+    border: none;
     font-size: 14px;
     opacity: 0.7;
 }
 #Library
 {
-    padding: 10px;
-    border:1px solid #c5c5c5;
+    padding: 5px 10px;
     border-radius: 10px;
+    background-color: #ececf4;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
+#Library > button
+{
+    padding: 5px;
+    font-size: 15px;
+    background-color: transparent;
+    border: none;
+}
+
 /* ----------hero-body--------- */
 
 #hero-container

@@ -2,11 +2,11 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    /* border: 1px solid black; */
+    border: 1px solid black;
 }
 body
 {
-    overflow: hidden;
+  
 }
 #root
 {
@@ -107,7 +107,7 @@ body
 #bottom
 {
     padding: 10px 20px;
-    background-color: #ececf4;
+    background-color:#ececf4;
     border-radius: 5px;
     position: absolute;
     left: 20px;
@@ -117,5 +117,33 @@ body
 {
     font-size: 20px;
     border: none;
+    background-color: transparent;
 
+}
+/* ------menu-color------- */
+.color-menu
+{
+  height: 300px;
+    width: 250px;
+    padding: 20px 15px;
+    border-radius: 10px;
+    background-color: #f8f8f8ff;
+    border: 1px solid #dededeff;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: fixed;
+    top: 150px;
+    left: 20px;
+}
+#strokeStyle
+{
+    width: 35px;
+    height: 35px;
+    border: none;
+    background-color: transparent;
+}
+.hide
+{
+    display: none;
 }

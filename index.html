@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Excalidraw</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -14,33 +15,35 @@
 
 <body>
     <!-- -----------nav-bar--------- -->
-    <nav>
-        <i class="fa-solid fa-bars" style="border: 1px solid #dadada;"></i>
-        <div class="mid-nav">
-            <i class="fa-solid fa-lock-open"></i> 
-            <div class="vertical-line"></div> 
-            <i class="fa-regular fa-hand"></i>
-            <img src="Assets/square.png" width="17px" alt="square">
-            <i class="fa-solid fa-diamond"></i>
-            <i class="fa-regular fa-circle"></i>
-            <img src="Assets/right-arrow.png" width="17px" alt="right-arrow">
-            <i class="fa-solid fa-minus"></i>
-            <a href="pencil.html"><i class="fa-solid fa-pencil"></i></a>
-            <i class="fa-solid fa-a"></i>
-            <i class="fa-regular fa-image"></i>
-            <i class="fa-solid fa-eraser"></i>
-            <div class="vertical-line"></div>
-            <img src="Assets/tool.png" width="17px" alt="">
+   
+    <div id="top-icons">
+        <button class='bx bx-menu'></button>
+        <div id="mid-icons">
+              <a href=""><button class='bx bxs-lock-alt'></button></a>
+                <div class="vertical-line"></div>
+               <a href=""><button class='bx bxs-hand' ></button></a>
+               <a href=""><button class='bx bx-pointer'></button></a>
+               <a href=""><button class='bx bx-square'></button></a>
+               <a href=""><button class="fa-solid fa-diamond"></button></a>
+               <a href=""><button class='bx bx-circle'></button></a>
+               <a href=""><button class='bx bx-right-arrow-alt'></button></a>
+               <a href=""><button class='bx bx-plus' ></button></a>
+               <a href=""><button class='bx bx-minus'></button></a>
+               <a href="pencil.html"><button class='bx bx-pencil'></button></a>
+               <a href=""><button class="fa-solid fa-a"></button></a>
+               <a href=""><button class='bx bx-image'></button></a>
+               <a href=""><button class='bx bx-eraser' ></button></a>
+                <div class="vertical-line"></div>
+               <a href=""><button class='bx bx-category' ></button></a>
         </div>
         <div id="lab-container">
-            <i class="fa-regular fa-user" style="color: white; background-color: blueviolet;"></i>
-            <div id="Library">
-                <i class="fa-solid fa-book-open"></i>
-                <span>Library</span>
-            </div>
+                <button class='bx bx-user'></button>
+                <div id="Library">
+                    <button class='bx bx-book-open'></button>
+                    <span>Library</span>
+                </div>
         </div>
-    </nav>
-
+    </div>
     <!-- -----hero-section------ -->
     <section id="hero-container">
         <div id="hero-body">
