@@ -28,6 +28,7 @@ const actions={
     rectangle:false,
     circle:false,
     rhombous:false,
+    line:false,
     eraser:false
 }
 
