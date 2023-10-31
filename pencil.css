@@ -105,8 +105,9 @@ body
 }
 #bottom
 {
-    padding: 10px 20px;
+    padding: 5px 10px;
     background-color:#ececf4;
+    border:1px solid #c5c5c5;
     border-radius: 5px;
     position: absolute;
     left: 20px;
@@ -114,7 +115,7 @@ body
 }
 #bottom div > button
 {
-    font-size: 20px;
+    font-size: 26px;
     border: none;
     background-color: transparent;
 
@@ -135,7 +136,27 @@ body
     top: 150px;
     left: 20px;
 }
-#strokeStyle
+.color-menu >div
+{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.color-menu >div > label
+{
+    display: inline-block;
+    height: 22px;
+    width: 22px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    background-color: aqua;
+}
+input[type="radio"] {
+   width: 0px;
+   height: 0px;
+  }
+
+#strokeVisible
 {
     width: 35px;
     height: 35px;

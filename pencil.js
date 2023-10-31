@@ -1,9 +1,8 @@
 const canvas=document.getElementById("canvas");
 canvas.width=innerWidth;
 canvas.height=innerHeight;
+let colorVisible = document.getElementById("strokeVisible");
 const ctx=canvas.getContext("2d");
-
-// -------------pencil-section--------------
 
 
 //  ------------ color menu ----------
@@ -20,7 +19,9 @@ function menuToggle()
 
 const formState={
     strokewidth:3,
-   strokeStyle:"black"
+   strokeStyle:"black",
+   eraserWidth:20,
+   opacity:10
 
 }
 const actions={
@@ -29,24 +30,27 @@ const actions={
     circle:false,
     rhombous:false,
     line:false,
-    eraser:false
+    eraser:false 
 }
 
- function onInput(element)
+ function onInput(element)     //inline called
  {
    newValue = element.value;
-    if(element.name==="strokewidth")
+   element.style.cssText ="border :1px solid red";
+    if(element.name==="strokewidth" || element.name==="eraserWidth" || element.name === "opacity")
     {
         formState[element.name]=parseInt(newValue);
     }
     else
     {
         formState[element.name]=newValue;
+        colorVisible.value =newValue;
     }
-    console.log(formState);
+    
  }
  let actionButtons=document.querySelectorAll("#mid-icons > .btn");
- function onActionClick(element)
+
+ function onActionClick(element)    //inline called
  {
     let actionName=element.id;
     for(let btns of actionButtons)
@@ -58,12 +62,12 @@ const actions={
       
     }
     element.classList.toggle("active");
+
    for(let btns of actionButtons)
    {
     let isActive = btns.classList.contains("active");
     actions[btns.id]=isActive;
    }
-   
+   console.log(actions);
  }
 
- 

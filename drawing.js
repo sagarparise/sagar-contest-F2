@@ -3,15 +3,17 @@
     let history = [];
     let historyIndex=-1;
    
+   
 function onMouseDown(e) {
   
-    if(!(actions.rectangle ||actions.rhombous || actions.circle || actions.pen || actions.eraser || actions.line))
+    if(!(actions.rectangle ||actions.rhombous || actions.circle || actions.pen || actions.eraser || actions.line || actions.file))
     {
         return;
     }
     previousPosition = {x:e.clientX , y:e.clientY};
     startIndex = history.length-1;
     ctx.beginPath();
+    ctx.globalAlpha = (formState.opacity) / 10;
     ctx.strokeStyle =  formState.strokeStyle;
     ctx.lineWidth = formState.strokewidth; 
     canvas.addEventListener("mousemove", onMouseMove);
@@ -45,17 +47,23 @@ function onMouseMove(e){
     {
         drawLine(currentPosition);
     }
+   
+    
 
 }
 function onMouseUp(){
     history.push(ctx.getImageData(0,0,canvas.width, canvas.height));
     historyIndex++;
+    // console.log(history,historyIndex);
     canvas.removeEventListener("mousemove", onMouseMove);
     canvas.removeEventListener("mouseup", onMouseUp);
 }
 canvas.addEventListener("mousedown", onMouseDown);
+
+
 function drawFreeHand(currentPosition)
 {
+
  ctx.moveTo(previousPosition.x, previousPosition.y);
  ctx.lineTo(currentPosition.x, currentPosition.y);
  ctx.lineCap="round";
@@ -64,10 +72,13 @@ function drawFreeHand(currentPosition)
  ctx.closePath();
  previousPosition = currentPosition ;
 }
+
+
 function handleErase(currentPosition)
 {
-    ctx.clearRect(currentPosition.x, currentPosition.y,formState.strokewidth,formState.strokewidth);
+    ctx.clearRect(currentPosition.x, currentPosition.y,formState.eraserWidth,formState.eraserWidth);
 }
+
 
 function drawCircle(currentPosition)
 {
@@ -90,9 +101,10 @@ function drawCircle(currentPosition)
      );
     ctx.arc(previousPosition.x, previousPosition.y, radius, 0, 2 * Math.PI, true);
     ctx.stroke();
-    history.push(ctx.getImageData(0,0, canvas.width, canvas.height));
     
 }
+
+
 function  drawRectangle(currentPosition)
 {
     if(startIndex !== -1)
@@ -120,8 +132,16 @@ function drawRhombous(currentPosition)
      {
         ctx.clearRect(0,0, canvas.width, canvas.height);
      }
-     ctx.beginPath();
-     
+        ctx.beginPath();
+        ctx.beginPath();
+        ctx.moveTo(previousPosition.x, (previousPosition.y + currentPosition.y) / 2);
+        ctx.lineTo((previousPosition.x + currentPosition.x) / 2, currentPosition.y);
+        ctx.lineTo(currentPosition.x, (previousPosition.y + currentPosition.y) / 2);
+        ctx.lineTo((previousPosition.x + currentPosition.x) / 2, previousPosition.y);
+        ctx.lineTo(previousPosition.x, (previousPosition.y + currentPosition.y) / 2);
+        ctx.stroke();
+        ctx.closePath();
+    
 }
 function drawLine(currentPosition)
 {
@@ -142,3 +162,24 @@ function drawLine(currentPosition)
     ctx.stroke();
     
 }
+
+// ----------file-select from FM--------
+function fileManager() {
+    let file = document.createElement("input");
+    file.setAttribute("type", "file");
+    file.click();
+    file.onchange = function(e) {
+      let img = new Image();
+      let fileReader = new FileReader();
+      fileReader.onload = function(event) {
+        img.onload = function() {
+            let xPos = Math.floor(Math.random() * (600-200)+200);
+            let yPos =Math.floor(Math.random() * (600-100)+250);
+          ctx.drawImage(img, xPos, yPos, 300,200);
+          history.push(ctx.getImageData(0, 0, canvas.width, canvas.height));
+        };
+        img.src = event.target.result;
+      };
+      fileReader.readAsDataURL(e.target.files[0]);//this.files[0]
+    };
+  }
