@@ -12,13 +12,16 @@
 </head>
 <body>
     <div id="root">
+
+        <!-- ----------nav-Bar------------ -->
+
         <div id="top-icons">
             <button class='bx bx-menu'"></button>
             <div id="mid-icons">
                     <button class='bx bxs-lock-alt'></button>
                     <div class="vertical-line"></div>
                     <button class='bx bxs-hand btn' ></button>
-                    <button class='bx bx-pointer btn'></button>
+                    <!-- <button class='bx bx-pointer btn'></button> -->
                     <button class='bx bx-square btn' id="rectangle" onclick=onActionClick(this)></button>
                     <button class="fa-solid fa-diamond btn" id="rhombous" onclick=onActionClick(this)></button>
                     <button class='bx bx-circle btn' id="circle" onclick=onActionClick(this)></button>
@@ -31,6 +34,7 @@
 
                     <button class='bx bx-eraser btn' id="eraser" onclick="onActionClick(this)"></button>
                     <div class="vertical-line"></div>
+                    <button class='bx bx-palette style-menu' onclick="menuToggle()"></button>
                     <button class='bx bx-category' ></button>
             </div>
             <div id="lab-container">
@@ -41,46 +45,166 @@
                     </div>
             </div>
         </div>
+
+        <!-- ------------canvas-section------------ -->
+
         <canvas id="canvas"></canvas>
+
+        <!-- ------------bottom-section---------- -->
+
         <div id="bottom">
-            <div>
-                <button class='bx bx-undo' id="undo" style="margin-right: 10px;"></button>
-                <button class='bx bx-redo' id="redo"></button>
-            </div>
+
+           <div id="bottom-left">
+                <div id="zm-container">
+                    <i class='bx bx-minus'></i>
+                    <span>100%</span>
+                    <i class='bx bx-plus'></i>
+                </div>
+                <div id="undo-redo-container">
+                    <button class='bx bx-undo' id="undo" ></button>
+                    <button class='bx bx-redo' id="redo"></button>
+                </div>
+           </div>
+
+           <div id="bottom-right">
+            <i class='bx bxs-check-shield'></i>
+            <i class='bx bx-help-circle'></i>
+           </div>
+            
         </div>
     </div>
     
+    <!-- ------------style-menu----------- -->
+
     <div class="color-menu hide">
 
         <label>Stroke Color</label> 
-    <div>
-        <label for="color-1" style="background-color: #1e1e1e;"></label>
-        <input type="radio" value="#1e1e1e" name="strokeStyle" id="color-1" oninput="onInput(this)" >
+        <div id="color-container">
+            <label for="color-1" style="background-color: #1e1e1e;"></label>
+            <input type="radio" value="#1e1e1e" name="strokeStyle" id="color-1" oninput="onInput(this)" >
 
-        <label for="color-2" style="background-color: #e03131;"></label>
-        <input type="radio" value="#e03131" name="strokeStyle" id="color-2" oninput="onInput(this)">
+            <label for="color-2" style="background-color: #e03131;"></label>
+            <input type="radio" value="#e03131" name="strokeStyle" id="color-2" oninput="onInput(this)">
 
-        <label for="color-3" style="background-color: #2f9e44;"></label>
-        <input type="radio" value="#2f9e44" name="strokeStyle" id="color-3" oninput="onInput(this)">
+            <label for="color-3" style="background-color: #2f9e44;"></label>
+            <input type="radio" value="#2f9e44" name="strokeStyle" id="color-3" oninput="onInput(this)">
 
-        <label for="color-4" style="background-color: #def10f;"></label>
-        <input type="radio" value="#def10f" name="strokeStyle" id="color-4" oninput="onInput(this)"> 
+            <label for="color-4" style="background-color: #def10f;"></label>
+            <input type="radio" value="#def10f" name="strokeStyle" id="color-4" oninput="onInput(this)"> 
 
-        <label for="color-5" style="background-color: #1971c2;"></label>
-        <input type="radio" value="#1971c2" name="strokeStyle" id="color-5" oninput="onInput(this)"> 
+            <label for="color-5" style="background-color: #1971c2;"></label>
+            <input type="radio" value="#1971c2" name="strokeStyle" id="color-5" oninput="onInput(this)"> 
 
-        <div style="height: 25px; border-left: 1px solid grey;"></div>
-        <input type="color" value="black" name="strokeVisible" id="strokeVisible">
-    </div>
+            <div style="height: 25px; border-left: 1px solid grey;"></div>
+            <input type="color" value="black" name="strokeVisible" id="strokeVisible">
+        </div>
 
       <label for="strokewidth">Stroke Width</label>
-      <input type="range" min="3" max="10" name="strokewidth" id="strokewidth" oninput="onInput(this)">
+      <!-- <input type="range" min="3" max="10" name="strokewidth" id="strokewidth" oninput="onInput(this)"> -->
+
+      <div id="stroke-container">
+        
+        <label for="stroke-1" class='bx bx-minus strokeBtn ' onclick="strokeBtnFun(this)"></label>
+        <label for="stroke-2" class='bx bx-minus strokeBtn ' onclick="strokeBtnFun(this)"></label>
+        <label for="stroke-3" class='bx bx-minus strokeBtn ' onclick="strokeBtnFun(this)"></label>
+
+        <input type="radio" name="strokewidth" value="3" id="stroke-1" oninput="onInput(this)">
+        <input type="radio" name="strokewidth" value="7" id="stroke-2" oninput="onInput(this)">
+        <input type="radio" name="strokewidth" value="10" id="stroke-3" oninput="onInput(this)">
+        
+      </div>
+
       <label for="eraserWidth">Eraser Width</label>
       <input type="range" min="20" max="50" name="eraserWidth" id="eraserWidth" oninput="onInput(this)">
       <label for="opacity">Opacity</label>
       <input type="range" value="1" min="1" max="10" name="opacity" id="opacity" oninput="onInput(this)">
       
     </div>
+
+    <!-- -----------Menu-Bar------------- -->
+    <div class="menu-bar hide">
+        <div class="rows">
+            <i class='bx bx-folder' ></i>
+            <p>Open</p>
+        </div>
+        <div  class="rows">
+            <i class='bx bx-download'></i>
+            <p>Save To</p>
+        </div>
+        <div  class="rows">
+            <i class='bx bx-export'></i>
+            <p>Export Image</p>
+        </div>
+        <div  class="rows">
+            <i class='bx bx-user'></i>
+            <p>Live collaboration</p>
+        </div>
+        <div  class="rows">
+            <i class='bx bx-help-circle'></i>
+            <p>Help</p>
+        </div>
+        <div  class="rows">
+            <i class='bx bx-trash'></i>
+            <p>Reset the canvas</p>
+        </div>
+
+         <hr>
+
+         <div  class="rows">
+            <i class='bx bx-gift'></i>
+            <p>Excalidraw+</p>
+        </div>
+        <div  class="rows">
+            <i class='bx bxl-github'></i>
+            <p>GitHub</p>
+        </div>
+        <div  class="rows">
+            <i class='bx bxl-discord-alt'></i>
+            <p>Discord</p>
+        </div>
+        <div  class="rows">
+            <i class='bx bxl-twitter'></i>
+            <p>Twitter</p>
+        </div>
+
+        <hr>
+
+        <div  class="rows">
+            <i class='bx bx-moon'></i>
+            <p>Dark Mode</p>
+        </div>
+        <select name="" id="language">
+            <option value="English" selected>English</option>
+            <option value="Marathi">Marathi</option>
+            <option value="Hindi">Hindi</option>
+            <option value="Bahasa Indonesia">Bahasa Indonesia</option>
+            <option value="Romana">Romana</option>
+        </select>
+        <div id="canvas-bg">
+            <label for="canvas-bg-1" style="background-color: #ffffff;"></label>
+            <input type="radio" value="#ffffff" name="background" id="canvas-bg-1" onclick="setBgCanvas(this)" >
+
+            <label for="canvas-bg-2" style="background-color: #cfffe1;"></label>
+            <input type="radio" value="#cfffe1" name="background" id="canvas-bg-2" onclick="setBgCanvas(this)">
+
+
+            <label for="canvas-bg-3" style="background-color: #ffefce;"></label>
+            <input type="radio" value="#ffefce" name="background" id="canvas-bg-3" onclick="setBgCanvas(this)"> 
+            
+            <label for="canvas-bg-4" style="background-color: #cdfaec;"></label>
+            <input type="radio" value="#cdfaec" name="background" id="canvas-bg-4" onclick="setBgCanvas(this)"> 
+
+            <label for="canvas-bg-5" style="background-color: #ffe7e7;"></label>
+            <input type="radio" value="#ffe7e7" name="background" id="canvas-bg-5" onclick="setBgCanvas(this)"> 
+
+            <div style="height: 25px; border-left: 1px solid grey;"></div>
+
+            <input type="color" value="white" name="bgVisible" id="bgVisible">
+        </div>
+
+    </div>
+<!-- -----------JS-file-------------- -->
+
     <script src="pencil.js"></script>
     <script src="undoFunction.js"></script>
     <script src="drawing.js"></script>
