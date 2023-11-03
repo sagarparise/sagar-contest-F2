@@ -25,11 +25,11 @@
                     <button class='bx bx-square btn' id="rectangle" onclick=onActionClick(this)></button>
                     <button class="fa-solid fa-diamond btn" id="rhombous" onclick=onActionClick(this)></button>
                     <button class='bx bx-circle btn' id="circle" onclick=onActionClick(this)></button>
-                    <button class='bx bx-right-arrow-alt btn'></button>
+                    <button class='bx bx-right-arrow-alt btn' id="arrow" onclick=onActionClick(this)></button>
                     <button class='bx bx-plus btn' ></button>
                     <button class='bx bx-minus btn' id="line" onclick=onActionClick(this)></button>
                     <button class='bx bx-pencil btn' id="pen" onclick=onActionClick(this)></button>
-                    <button class="fa-solid fa-a btn"></button>
+                    <button class="fa-solid fa-a btn" id="text" onclick=onActionClick(this)></button>
                     <button class='bx bx-image btn' id="file" onclick="fileManager()"></button>
 
                     <button class='bx bx-eraser btn' id="eraser" onclick="onActionClick(this)"></button>
@@ -56,9 +56,9 @@
 
            <div id="bottom-left">
                 <div id="zm-container">
-                    <i class='bx bx-minus'></i>
+                    <button class='bx bx-minus' onclick="zoomIn()"></button>
                     <span>100%</span>
-                    <i class='bx bx-plus'></i>
+                    <button class='bx bx-plus' onclick="zoomOut()"></button>
                 </div>
                 <div id="undo-redo-container">
                     <button class='bx bx-undo' id="undo" ></button>
@@ -96,7 +96,8 @@
             <input type="radio" value="#1971c2" name="strokeStyle" id="color-5" oninput="onInput(this)"> 
 
             <div style="height: 25px; border-left: 1px solid grey;"></div>
-            <input type="color" value="black" name="strokeVisible" id="strokeVisible">
+
+            <input type="color" value="red" name="strokeStyle" id="strokeVisible" oninput="onInput(this)">
         </div>
 
       <label for="strokewidth">Stroke Width</label>
@@ -108,8 +109,8 @@
         <label for="stroke-2" class='bx bx-minus strokeBtn ' onclick="strokeBtnFun(this)"></label>
         <label for="stroke-3" class='bx bx-minus strokeBtn ' onclick="strokeBtnFun(this)"></label>
 
-        <input type="radio" name="strokewidth" value="3" id="stroke-1" oninput="onInput(this)">
-        <input type="radio" name="strokewidth" value="7" id="stroke-2" oninput="onInput(this)">
+        <input type="radio" name="strokewidth" value="2" id="stroke-1" oninput="onInput(this)">
+        <input type="radio" name="strokewidth" value="5" id="stroke-2" oninput="onInput(this)">
         <input type="radio" name="strokewidth" value="10" id="stroke-3" oninput="onInput(this)">
         
       </div>

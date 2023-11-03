@@ -15,7 +15,13 @@
 body{
    
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
+}
+#root-container
+{
+    width: 100vw;
+    height: 100vh;
+   position: relative;
 }
 
 #top-icons{
@@ -47,8 +53,13 @@ body{
     display: flex;
     align-items: center;
     gap: 10px;
+    position: absolute;
+    left: 30vw;
+    right: 30vw;
+    top: 0px;
+    overflow-x: scroll;
 }
-#mid-icons>a>button
+#mid-icons>a>button,.color-pallet>a>button
 {
     padding: 5px;
     border-radius: 5px;
@@ -245,4 +256,54 @@ opacity: 0.8;
     position: absolute;
     bottom: 60px;
     right: 50px;
+}
+#mid-icons::-webkit-scrollbar
+{
+    display: none;
+}
+.color-pallet
+{
+    height: 600px;
+    width: 50px;
+    padding: 10px 20px;
+    background-color: white;
+    border: 1px solid #c5c5c5;
+    border-radius: 7px;
+    box-shadow: 0px 5px 15px 5px #efefefff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    left: 15px;
+    top: 70px;
+   
+}
+
+#box-pallet
+{
+    padding: 5px;
+    font-size: 20px;
+    border:1px solid #c5c5c5;
+    border-radius: 5px;
+    background-color: #ececf4;
+    color: rgb(0, 0, 0);
+    position: absolute;
+    bottom: 18px;
+    left: 200px;
+    display: none;
+}
+.hide{
+    display: none;
+}
+@media screen and (max-width:700px){
+    #box-pallet{
+        display: block;
+    }
+    #mid-icons
+    {
+        display: none;
+    }
+      
 }

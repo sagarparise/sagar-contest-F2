@@ -6,7 +6,7 @@
    
 function onMouseDown(e) {
   
-    if(!(actions.rectangle ||actions.rhombous || actions.circle || actions.pen || actions.eraser || actions.line || actions.file))
+    if(!(actions.rectangle ||actions.rhombous || actions.circle || actions.pen || actions.eraser || actions.line || actions.arrow))
     {
         return;
     }
@@ -47,6 +47,10 @@ function onMouseMove(e){
     {
         drawLine(currentPosition);
     }
+    else if(actions.arrow)
+    {
+        drawArrow(currentPosition);
+    }
    
     
 
@@ -85,14 +89,16 @@ function drawCircle(currentPosition)
      if(startIndex !== -1)
      {
         ctx.putImageData(history[startIndex], 0, 0);
+        
      }
      else
      {
-        ctx.clearRect(0,0, canvas.width, canvas.height);
+     ctx.clearRect(0,0, canvas.width, canvas.height);
+    
      }
     if(startIndex!==history.length-1)
     {
-        history.pop();
+       history.pop();
     }
     ctx.beginPath();
     let radius = Math.sqrt(
@@ -113,7 +119,7 @@ function  drawRectangle(currentPosition)
      }
      else
      {
-        ctx.clearRect(0,0, canvas.width, canvas.height);
+       ctx.clearRect(0,0, canvas.width, canvas.height);
      }
      ctx.beginPath();
      let width = currentPosition.x - previousPosition.x;
@@ -154,13 +160,36 @@ function drawLine(currentPosition)
      {
         ctx.clearRect(0,0, canvas.width, canvas.height);
      }
+
    ctx.beginPath();
     ctx.moveTo(previousPosition.x, previousPosition.y);
     ctx.lineTo(currentPosition.x, currentPosition.y);
     ctx.lineCap="round";
     ctx.lineJoin="round";
     ctx.stroke();
+   
     
+}
+function drawArrow(currentPosition)
+{
+      
+    if(startIndex !== -1)
+     {
+        ctx.putImageData(history[startIndex], 0, 0);
+     }
+     else
+     {
+        ctx.clearRect(0,0, canvas.width, canvas.height);
+     }
+     var headLength = 15;
+     var angle = Math.atan2(currentPosition.y - previousPosition.y, currentPosition.x - previousPosition.x);
+     ctx.beginPath();
+     ctx.moveTo(previousPosition.x,previousPosition.y);
+     ctx.lineTo(currentPosition.x, currentPosition.y);
+     ctx.lineTo(currentPosition.x - headLength * Math.cos(angle - Math.PI / 6), currentPosition.y- headLength * Math.sin(angle - Math.PI / 6));
+     ctx.moveTo(currentPosition.x, currentPosition.y);
+     ctx.lineTo(currentPosition.x - headLength * Math.cos(angle + Math.PI / 6), currentPosition.y- headLength * Math.sin(angle + Math.PI / 6));
+     ctx.stroke();
 }
 
 // ----------file-select from FM--------
